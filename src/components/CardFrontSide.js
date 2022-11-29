@@ -7,7 +7,9 @@ export default function CardFrontSide(props) {
       <div className="card-number-front-side">{props.cardNumber}</div>
       <div className="card-holder-front-side">
         <p>{props.cardHolder}</p>
-        <p>{props.cardExpireDate}</p>
+        <p>
+          {props.cardExpireMonth}/{props.cardExpireYear}
+        </p>
       </div>
     </div>
   );

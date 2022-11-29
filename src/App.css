@@ -41,6 +41,16 @@ html {
   justify-content: space-between;
   align-items: flex-start;
 }
+/* .card-front-side input{
+  background: none;
+  
+}
+.input-card-date{
+  width: 20%;
+}
+.input-card-holder{
+  width: 80%;
+} */
 .card-number-front-side {
   width: 100%;
   font-weight: 500;
@@ -56,6 +66,7 @@ html {
   font-size: 14px;
   letter-spacing: 2px;
   color: #FFFFFF;
+  /* border: 1px solid red; */
 }
 .card-back-side {
   position: absolute;
@@ -101,7 +112,7 @@ label {
   letter-spacing: 2px;
   color: #21092F;
 }
-input {
+form input {
   margin-bottom: 26px;
   width: 100%;
   height: 45px;
