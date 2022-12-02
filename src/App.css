@@ -228,9 +228,9 @@ input::-webkit-inner-spin-button {
 .card-holder-front-side p, .cvc-box p{
   font-size: 9px;
 }
-.white-side {
+/* .white-side {
   height: 50%;
-}
+} */
 form {
   margin-left: 0;
   padding: 24px;
