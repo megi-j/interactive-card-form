@@ -1,8 +1,14 @@
+import { useState } from "react";
+
 export default function CardForm(props) {
   return (
     <form onSubmit={(e) => props.handleSubmit(e)}>
       <label htmlFor="">Cardholder Name</label>
       <input
+        style={{
+          border:
+            props.nameBlank === "" ? "1px solid #DFDEE0" : "1px solid #FF5050",
+        }}
         type="text"
         placeholder="e.g. Jane Appleseed"
         value={props.name}
@@ -17,6 +23,12 @@ export default function CardForm(props) {
       </label>
       <label htmlFor="">Card Number</label>
       <input
+        style={{
+          border:
+            props.numberBlank === ""
+              ? "1px solid #DFDEE0"
+              : "1px solid #FF5050",
+        }}
         type="number"
         placeholder="e.g. 1234 5678 9123 0000"
         value={props.number}
@@ -33,15 +45,27 @@ export default function CardForm(props) {
         <div>
           <label htmlFor="">Exp. Date (MM/YY)</label>
           <input
+            style={{
+              border:
+                props.expireDateBlank === ""
+                  ? "1px solid #DFDEE0"
+                  : "1px solid #FF5050",
+            }}
             type="number"
             placeholder="MM"
             id="month"
-            min={1}
-            max={12}
+            // min={1}
+            // max={12}
             value={props.cardExpireMonthInput}
             onChange={(e) => props.changeCardExpireMonthInput(e)}
           />
           <input
+            style={{
+              border:
+                props.expireDateBlank === ""
+                  ? "1px solid #DFDEE0"
+                  : "1px solid #FF5050",
+            }}
             type="number"
             placeholder="YY"
             id="year"
@@ -54,6 +78,12 @@ export default function CardForm(props) {
         <div>
           <label htmlFor="">CVC</label>
           <input
+            style={{
+              border:
+                props.expireDateBlank === ""
+                  ? "1px solid #DFDEE0"
+                  : "1px solid #FF5050",
+            }}
             type="number"
             placeholder="e.g. 123"
             id="cvc"
@@ -69,7 +99,6 @@ export default function CardForm(props) {
         </p>
         <p style={{ color: "#FF5050", fontSize: 12 }}>{props.cvcBlank}</p>
       </div>
-
       <button type="submit">Confirm</button>
     </form>
   );

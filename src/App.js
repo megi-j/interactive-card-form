@@ -22,7 +22,7 @@ function App() {
   const [expireDateBlank, setExpireDateBlank] = useState("");
   const [cvcBlank, setCvcBlank] = useState("");
   const [confirmClicked, setConfirmClicked] = useState(false);
-  // const [continueClicked, setContinueClicked] = useState(false);
+
   function changeName(e) {
     setNameInputValue(e.target.value);
 
@@ -51,7 +51,6 @@ function App() {
     if (e.target.value.length < 3) {
       setCardExpireMonthInput(e.target.value);
       setCardExpireMonth(e.target.value);
-      console.log(cardExpireMonthInput);
     }
     if (e.target.value > 12) {
       setCardExpireMonthInput(12);
@@ -62,20 +61,18 @@ function App() {
   }
 
   function changeCardExpireYearInput(e) {
+    let year = new Date().getFullYear().toString().slice(-2);
+
     if (e.target.value.length < 3) {
       setCardExpireYearInput(e.target.value);
       setCardExpireYear(e.target.value);
     }
-    let year = new Date().getFullYear().toString().substr(-2);
-    // let numberYear = parseInt(year);
-
-    if (e.target.value < year) {
-      console.log(e.target.value);
-      setCardExpireYearInput(year);
-      setCardExpireYear(year);
-    }
-    if (e.target.value === "") {
+    if (e.target.value < 22) {
+      setCardExpireYearInput(22);
+      setCardExpireYear(22);
+    } else if (e.target.value === "") {
       setCardExpireYear("00");
+      setCardExpireYearInput("");
     }
   }
   function changeCvcValue(e) {
